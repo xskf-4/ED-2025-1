@@ -2,11 +2,11 @@
 ## Información
 Sebastian Hernandez Reyes
 
-## asidhaisdhis
+## Paletita
 sajdhiafiasfisa+
 
-## asdih sha 
+## Colmena 
 aisdjaosdjosajdsa
 
-### oasjdoajsd
+### Bodrio
 daisjhd ash

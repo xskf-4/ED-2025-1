@@ -48,7 +48,6 @@ int main(){
             i=1;
             j=4;
             contador++;
-            printf("i: %d\tj: %d\n", i, j);
         }
         
         if(i>0 && i<5){
@@ -57,7 +56,6 @@ int main(){
             j--;
         }
         
-        printf("i: %d\tj: %d\n", i, j);
         contador++;
     }while(i!=6 && j!=6);
 

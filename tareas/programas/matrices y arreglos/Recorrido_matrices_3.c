@@ -39,7 +39,6 @@ int main(){
     j=5;
 
     do{
-        printf("i: %d\tj: %d\n", i, j);
         
 		if(i==0 || i==5){
             matriz[i][j]=contador;
@@ -50,7 +49,6 @@ int main(){
             i=4;
             j=1;
             contador++;
-            printf("i: %d\tj: %d\n", i, j);
         }
         
         if(i>0 && i<5){
