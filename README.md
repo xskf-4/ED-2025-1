@@ -1,4 +1,7 @@
 # ED-2025-1
+## Información
+Sebastian Hernandez Reyes
+
 ## asidhaisdhis
 sajdhiafiasfisa+
 
