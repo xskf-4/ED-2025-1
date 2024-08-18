@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void imprimirMatriz(int m[6][4]){
+void imprimirMatriz(int m[3][4]){
     int i,j;
 
-    for(i=0; i<6; i++){
+    for(i=0; i<3; i++){
         for(j=0; j<4; j++){
         	if(m[i][j]>9){
         		printf("%d ", m[i][j]);
@@ -23,10 +23,10 @@ void imprimirMatriz(int m[6][4]){
 }
 
 int main(){
-    int matriz[6][4];
+    int matriz[3][4];
     int i, j, contador=1;
 
-    for(i=0; i<6; i++){
+    for(i=0; i<3; i++){
         for(j=0; j<4; j++){
             matriz[i][j]=0;
         }
@@ -35,14 +35,9 @@ int main(){
     printf("Matriz inicial: \n");
     imprimirMatriz(matriz);
 
-	for(i=0; i<6; i++){
+	for(i=0; i<3; i++){
 		for(j=0; j<4; j++){
-			if(i%2){
-				matriz[i][3-j]=contador;
-			}
-			else{
-				matriz[i][j]=contador;
-			}
+			matriz[i][3-j]=contador;
 			contador++;
 		}
 	}

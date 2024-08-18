@@ -35,31 +35,32 @@ int main(){
     printf("Matriz inicial: \n");
     imprimirMatriz(matriz);
 	
-    i=0;
-    j=0;
+    i=5;
+    j=5;
 
     do{
-        if(i==0 || i==5){
+        printf("i: %d\tj: %d\n", i, j);
+        
+		if(i==0 || i==5){
             matriz[i][j]=contador;
-            j++;
+            j--;
         }
         
-        if(j==6 && i==0){
-            i=1;
-            j=4;
+        if(j==-1 && i==5){
+            i=4;
+            j=1;
             contador++;
             printf("i: %d\tj: %d\n", i, j);
         }
         
         if(i>0 && i<5){
             matriz[i][j]=contador;
-            i++;
-            j--;
+            i--;
+            j++;
         }
         
-        printf("i: %d\tj: %d\n", i, j);
         contador++;
-    }while(i!=6 && j!=6);
+    }while(i!=-1 && j!=-1);
 
     printf("\nMatriz con recorrido: \n");
     imprimirMatriz(matriz);
