@@ -1,6 +1,6 @@
 # ED-2025-1
 ## Información
-Sebastian Hernandez Reyes
+Sebastian Hernandez Reyes (xskf-4)
 
 ## Paletita
 sajdhiafiasfisa+
