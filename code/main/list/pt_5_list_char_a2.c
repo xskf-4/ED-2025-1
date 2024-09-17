@@ -43,6 +43,11 @@ int main (int argc, char **argv) {
     int i, j, r_num;
     char *data, arr_char[]={'D','R', 'o', '9'};
 
+    if(argc==1){
+        fprintf(stdout, "No se ingresaron argumentos");
+        return -1;
+    }
+
     // Inicializar la lista
     list_init(&list, free);
 
