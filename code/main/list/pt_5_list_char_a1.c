@@ -117,6 +117,7 @@ int main (int argc, char **argv) {
     fprintf(stdout, "\nLista destruida\n");
     list_destroy(&list);
 
+    fprintf(stdout, "\n\n");
     system("pause");
     return 0;
 }
