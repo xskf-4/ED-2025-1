@@ -8,4 +8,4 @@ Para que los programas funcionen correctamente
 Ejecutar el programa desde cmd con los argumentos en el siguiente orden
 - nombre_del_ejecutable.exe   "texto_1" "texto_2" .. "texto_n"
 
-El programa trabajará con cada una de las cadenas ingresadas. Por defecto el límite de longitud es 20.
+El programa trabajará con cada una de las cadenas ingresadas. Por defecto el límite de longitud de cada cadena es 20.
