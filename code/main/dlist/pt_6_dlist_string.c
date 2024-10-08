@@ -56,8 +56,8 @@ int main(int argc, char **argv){
     // Initialize the linked dlist
     dlist_init(&dlist, free);
 
-    if(argc == 0){
-        fprintf(stdout, "No se ingresaron Argumentos");
+    if(argc <= 1){
+        fprintf(stdout, "No arguments were provided");
         return 0;
     }
 
