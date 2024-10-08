@@ -16,17 +16,21 @@ static void print_clist(const CList *clist){
     CListNode *node;
     int i, j;
     float *data;
-    char str_x[MAX_STR_LEN];
+    char str_x[MAX_STR_LEN]; // auxiliar string
 
     fprintf(stdout, "CList size is %d\n", clist_size(clist));
 
     i = 0;
     node = clist_head(clist);
 
+    /*
+        print info for each node
+    */
+
     for(i=0; i<clist_size(clist); i++){
         data = clist_data(node);
-        snprintf(str_x, MAX_STR_LEN, "%g", *data);
 
+        snprintf(str_x, MAX_STR_LEN, "%g", *data);
         fprintf(stdout, "clist.node[%03d]=%g", i, *data);
         for(j = 0; j < MAX_STR_LEN-strlen(str_x); j++)
             fprintf(stdout, " ");
@@ -103,7 +107,7 @@ int main(int argc, char **argv){
         print_clist(&clist);
     }
 
-    // Removind 4 random elements at random positions
+    // Removing 4 random elements at random positions
     for(i = 0; i < 4; i++){
         r_num1 = rand() % clist_size(&clist); //Randomly choosing a position
 
