@@ -12,22 +12,20 @@
     Print CList
 */
 
-static void print_clist(const CList *clist){
+static void print_clist(const CList *clist) {
     CListNode *node;
     int i, j;
     float *data;
     char str_x[MAX_STR_LEN]; // auxiliar string
 
     fprintf(stdout, "CList size is %d\n", clist_size(clist));
-
-    i = 0;
     node = clist_head(clist);
 
     /*
         print info for each node
     */
 
-    for(i=0; i<clist_size(clist); i++){
+    for(i = 0; i<clist_size(clist); i++) {
         data = clist_data(node);
 
         snprintf(str_x, MAX_STR_LEN, "%g", *data);
@@ -42,7 +40,7 @@ static void print_clist(const CList *clist){
     return;
 }
 
-int main(int argc, char **argv){
+int main(int argc, char **argv) {
     CList clist;
     CListNode *node;
 
@@ -56,17 +54,16 @@ int main(int argc, char **argv){
     //Initialize the circular list
     clist_init(&clist, free);
 
-    if(argc <= 1){
+    if(argc <= 1) {
         fprintf(stdout, "No arguments were provided");
         return 0;
     }
 
-    //Fill the circular list
-    for(i = 1; i < argc; i++){
-        if(i!=1 && i!=2){
+    // Fill the circular list
+    for(i = 1; i < argc; i++) {
+        if(i != 1 && i != 2){
             node = clist_next(node);
-        }
-        else{
+        } else {
             node = clist_head(&clist);
         }
 
@@ -82,7 +79,7 @@ int main(int argc, char **argv){
     print_clist(&clist);
 
     // Adding 4 random elements at random positions
-    for(i = 0; i < 4; i++){
+    for(i = 0; i < 4; i++) {
         r_num1 = rand() % 1000;
         r_num2 = rand() % 100+1;
 
@@ -93,7 +90,7 @@ int main(int argc, char **argv){
         r_num1 = rand() % clist_size(&clist);
         fprintf(stdout, "\n\nInserting %g in position %03d\n", *data, r_num1);
         
-        if(r_num1 == 0){
+        if(r_num1 == 0) {
             node = NULL;
         } else {
             node = clist_head(&clist);
@@ -108,12 +105,12 @@ int main(int argc, char **argv){
     }
 
     // Removing 4 random elements at random positions
-    for(i = 0; i < 4; i++){
+    for(i = 0; i < 4; i++) {
         r_num1 = rand() % clist_size(&clist); //Randomly choosing a position
 
         fprintf(stdout, "\n\nDeleting node in position %03d\n", r_num1);
 
-        if(r_num1 == 0){
+        if(r_num1 == 0) {
             node = NULL;
         } else {
             node = clist_head(&clist);

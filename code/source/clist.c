@@ -1,4 +1,3 @@
-
 /*
     clist.c
 */
@@ -10,7 +9,7 @@
 /*
     Initialize the clist
 */
-void clist_init (CList *list, void (*destroy)(void *data)){
+void clist_init (CList *list, void (*destroy)(void *data)) {
     list->size = 0;
     list->destroy = destroy;
     list->head = NULL;
@@ -21,11 +20,10 @@ void clist_init (CList *list, void (*destroy)(void *data)){
 /*
     Destroying the clist
 */
-
-void clist_destroy(CList *list){
+void clist_destroy(CList *list) {
     void *data;
 
-    while(clist_size(list) > 0){
+    while(clist_size(list) > 0) {
         if (clist_rem_next(list, NULL, (void**)&data) == 0 && list->destroy != NULL){
             list->destroy(data);
         }
@@ -37,7 +35,7 @@ void clist_destroy(CList *list){
 /*
     Insert next node at the clist
 */
-int clist_ins_next(CList *list, CListNode *node, const void *data){
+int clist_ins_next(CList *list, CListNode *node, const void *data) {
     CListNode *new_node;
 
     if((new_node = (CListNode *)malloc(sizeof(CListNode))) == NULL)
@@ -45,11 +43,10 @@ int clist_ins_next(CList *list, CListNode *node, const void *data){
 
     new_node->data = (void *)data;
 
-    if(clist_size(list) == 0){
+    if(clist_size(list) == 0) {
         new_node->next = new_node;
         list->head = new_node;
-    }
-    else{
+    } else {
         if(node == NULL)
             node = list->head;
 
@@ -65,14 +62,14 @@ int clist_ins_next(CList *list, CListNode *node, const void *data){
 /*
     Remove node at the List
 */
-int clist_rem_next (CList *list, CListNode *node, void **data){
+int clist_rem_next (CList *list, CListNode *node, void **data) {
     CListNode *old_node;
 
     //Check if is not empty list
     if(node == NULL && clist_size(list) == 0)
         return -1;
 
-    if(node->next == node){
+    if(node->next == node) {
         *data = list->head->data;
         old_node = node;
         list->head = NULL;
