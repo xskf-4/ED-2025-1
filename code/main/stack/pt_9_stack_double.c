@@ -6,7 +6,7 @@
 #include "list.h"
 #include "stack.h"
 
-#define STR_LEN_MAX 20
+#define MAX_STR_LEN 20
 
 /*
    Print stack
@@ -16,7 +16,7 @@ static void print_stack(const Stack *stack) {
 	ListNode *node;
 	int size, i, j;
 	double *data;
-	char cad_aux[STR_LEN_MAX];
+	char cad_aux[MAX_STR_LEN];
 
 	fprintf(stdout, "Stack size is %d\n", size = stack_size(stack));
 
@@ -28,7 +28,7 @@ static void print_stack(const Stack *stack) {
 
 		sprintf(cad_aux, "%g", *data);
 
-		for(j = strlen(cad_aux); j < STR_LEN_MAX; j++)
+		for(j = strlen(cad_aux); j < MAX_STR_LEN; j++)
 			strcat(cad_aux, " ");
 
 		fprintf(stdout, "stack[%03d]=%s | %p -> %p\n", i, cad_aux, node, node->next);
@@ -79,7 +79,6 @@ int main(int argc, char const *argv[]) {
 	}
 	print_stack(&stack);
 	
-
 	fprintf(stdout, "\nPushing 5 random numbers: [");
 	for(i = 0; i < 5; i++) {
 		if ((data = (double *)malloc(sizeof(double))) == NULL)
@@ -92,7 +91,7 @@ int main(int argc, char const *argv[]) {
 		if(i == 0)
 			fprintf(stdout, "%g, ", *data);
 		else if(i == 4)
-			fprintf(stdout, " %g", *data);
+			fprintf(stdout, "%g", *data);
 		else
 			fprintf(stdout, "%g, ", *data);
 
