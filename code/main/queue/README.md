@@ -1,7 +1,7 @@
 
-# dlist
+# queue
 
-## PT 6
+## PT 10
 Para que los programas funcionen correctamente
 
 ### pt_6_main_dlist.c
